@@ -2,6 +2,7 @@ var callBackReussi= function(data) {
     //alert("Meteo temp  : "  + data.main.temp);
     var element = document.getElementById("zone_meteo");
     element.innerHTML = "La temperature est de " + data.main.temp;
+    element.style.color = "#42d0ed";
 }
 
 
@@ -13,10 +14,4 @@ function buttonClick() {
     $.get(url, callBackReussi).done(function() {
         //alert( "second success" );
       })
-      .fail(function() {
-        alert( "error" );
-      })
-      .always(function() {
-        //alert( "finished" );
-      });
 }
